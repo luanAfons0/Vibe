@@ -1,16 +1,21 @@
 <script setup lang="ts">
-  import HelloWorld from './components/HelloWorld.vue'
+  import LeftMenu from "./components/LeftMenu.vue"
+  import RightMenu from "./components/RightMenu.vue"
+  import MiddleScroll from "./components/MiddleScroll.vue"
 </script>
 
 <template>
   <div class="wrapper">
-      <HelloWorld msg="Hello world" />
+      <LeftMenu msg="Left side menu" />
+      <MiddleScroll msg="Middle scroll" />
+      <RightMenu msg="Right side menu" />
   </div>
 </template>
 
 <style scoped>
   .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>
