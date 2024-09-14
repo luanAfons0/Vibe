@@ -6,9 +6,9 @@
 
 <template>
   <div class="wrapper">
-      <LeftMenu msg="Left side menu" />
-      <MiddleScroll msg="Middle scroll" />
-      <RightMenu msg="Right side menu" />
+      <LeftMenu />
+      <MiddleScroll />
+      <RightMenu />
   </div>
 </template>
 

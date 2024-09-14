@@ -1,12 +1,9 @@
-<script  setup lang="ts">
-    defineProps<{
-        msg: string
-    }>()
+<script lang="ts">
+    export default {}
 </script>
 
 <template>
     <div class="middle-scroll">
-        <h1>{{ msg }}</h1>
     </div>
 </template>
 
@@ -14,6 +11,8 @@
     .middle-scroll {
         width: 100%;
         min-height: 100vh;
-        background-color: green;
+        background-color: var(--black-color);
+        border-left: 1px solid var(--gray-color);
+        border-right: 1px solid var(--gray-color);
     }
 </style>
