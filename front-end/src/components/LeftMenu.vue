@@ -38,10 +38,10 @@ export default {
 
 <template>
   <div class="left-side">
-    <img src="/images/vibe-logo.png" alt="" />
+    <img src="/images/vibe-logo.png" alt="Application logo" />
     <div class="left-button" v-for="(button, index) in leftMenuButtons" v-bind:key="index">
       <component v-bind:is="button.icon"></component>
-      <a :href="button.link"> {{ button.label }}</a>
+      <router-link :to="button.link"> {{ button.label }}</router-link>
     </div>
   </div>
 </template>

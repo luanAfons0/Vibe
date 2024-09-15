@@ -1,21 +1,7 @@
-<script setup lang="ts">
-import LeftMenu from './components/LeftMenu.vue'
-import RightMenu from './components/RightMenu.vue'
-import MiddleScroll from './components/MiddleScroll.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="wrapper">
-    <LeftMenu />
-    <MiddleScroll />
-    <RightMenu />
-  </div>
+  <router-view />
 </template>
 
-<style scoped>
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
+<style scoped></style>
