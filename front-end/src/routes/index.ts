@@ -13,7 +13,7 @@ const routes = [
   { path: '/messages', name: 'Messages', component: MessagesView },
   { path: '/saved-items', name: 'Saved items', component: SavedItemsView },
   { path: '/profile', name: 'Profile', component: ProfileView },
-  { path: '/:pathMatch(.*)*', name: 'Not Found', component: NotFound },
+  { path: '/:pathMatch(.*)*', name: 'Not Found', component: NotFound }
 ]
 
 const router = createRouter({

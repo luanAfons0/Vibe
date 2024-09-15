@@ -12,13 +12,20 @@ export default {
   data() {
     return {
       leftMenuButtons: [
-        { label: 'Página Inicial', link: '/', icon: 'homeIcon' },
-        { label: 'Explorar', link: '/explore', icon: 'hashTagIcon' },
-        { label: 'Mensagens', link: '/messages', icon: 'mailIcon' },
-        { label: 'Itens salvos', link: '/saved-items', icon: 'flagIcon' },
-        { label: 'Perfil', link: '/profile', icon: 'profileIcon' },
-      ]
+        { label: 'Página Inicial', link: '/', icon: 'homeIcon', name: 'Home' },
+        { label: 'Explorar', link: '/explore', icon: 'hashTagIcon', name: 'Explore' },
+        { label: 'Mensagens', link: '/messages', icon: 'mailIcon', name: 'Messages' },
+        { label: 'Itens salvos', link: '/saved-items', icon: 'flagIcon', name: 'Saved items' },
+        { label: 'Perfil', link: '/profile', icon: 'profileIcon', name: 'Profile' }
+      ],
+      selectedMenuButton: 0
     }
+  },
+  mounted() {
+    const routeName = this.$route.name
+    const selectedButton = this.leftMenuButtons.find((item) => item.name == routeName)
+    const indexOfSelectedButton = this.leftMenuButtons.indexOf(selectedButton as any)
+    this.selectedMenuButton = indexOfSelectedButton
   },
   components: {
     homeIcon,
@@ -36,13 +43,16 @@ export default {
 <template>
   <div class="left-side">
     <img src="/images/vibe-logo.png" alt="Application logo" />
-    <div class="left-button" v-for="(button, index) in leftMenuButtons" v-bind:key="index">
+    <div
+      class="left-button"
+      v-bind:class="index === selectedMenuButton ? 'selectedMenuButton' : ''"
+      v-for="(button, index) in leftMenuButtons"
+      v-bind:key="index"
+    >
       <component v-bind:is="button.icon"></component>
       <router-link :to="button.link"> {{ button.label }}</router-link>
     </div>
-    <button>
-      Tweet
-    </button>
+    <button>Tweet</button>
   </div>
 </template>
 
@@ -92,5 +102,14 @@ button {
   padding: 1rem;
   color: var(--white-color);
   background-color: var(--blue-color);
+  border: solid 1px var(--black-color);
+}
+
+.selectedMenuButton a {
+  color: var(--blue-color) !important;
+}
+
+.selectedMenuButton svg {
+  fill: var(--blue-color) !important;
 }
 </style>
