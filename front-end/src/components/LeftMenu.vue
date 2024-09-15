@@ -14,12 +14,9 @@ export default {
       leftMenuButtons: [
         { label: 'Página Inicial', link: '/', icon: 'homeIcon' },
         { label: 'Explorar', link: '/explore', icon: 'hashTagIcon' },
-        { label: 'Notificações', link: '/notifications', icon: 'bellIcon' },
         { label: 'Mensagens', link: '/messages', icon: 'mailIcon' },
         { label: 'Itens salvos', link: '/saved-items', icon: 'flagIcon' },
-        { label: 'Listas', link: '/lists', icon: 'journalIcon' },
         { label: 'Perfil', link: '/profile', icon: 'profileIcon' },
-        { label: 'Mais', link: '/more', icon: 'etceteraIcon' }
       ]
     }
   },
@@ -43,6 +40,9 @@ export default {
       <component v-bind:is="button.icon"></component>
       <router-link :to="button.link"> {{ button.label }}</router-link>
     </div>
+    <button>
+      Tweet
+    </button>
   </div>
 </template>
 
@@ -82,5 +82,15 @@ img {
   height: 50px;
   margin-right: 1rem;
   stroke-width: 1px !important;
+}
+
+button {
+  margin-top: 2rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1rem;
+  color: var(--white-color);
+  background-color: var(--blue-color);
 }
 </style>
