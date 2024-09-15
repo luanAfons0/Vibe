@@ -111,5 +111,6 @@ button {
 
 .selectedMenuButton svg {
   fill: var(--blue-color) !important;
+  stroke: var(--blue-color) !important;
 }
 </style>
