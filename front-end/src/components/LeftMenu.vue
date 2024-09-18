@@ -7,6 +7,7 @@ import flagIcon from './icons/flagIcon.vue'
 import journalIcon from './icons/journalIcon.vue'
 import etceteraIcon from './icons/etceteraIcon.vue'
 import profileIcon from './icons/profileIcon.vue'
+import basicButton from './BasicButton.vue'
 
 export default {
   data() {
@@ -35,7 +36,8 @@ export default {
     flagIcon,
     journalIcon,
     etceteraIcon,
-    profileIcon
+    profileIcon,
+    basicButton
   }
 }
 </script>
@@ -52,7 +54,7 @@ export default {
       <component v-bind:is="button.icon"></component>
       <router-link :to="button.link"> {{ button.label }}</router-link>
     </div>
-    <button>Tweet</button>
+    <basicButton :textButtonColor="'#ffffff'" :buttonText="'Tweet'" :buttonColor="'#05a0ef'" />
   </div>
 </template>
 
@@ -92,17 +94,6 @@ img {
   height: 50px;
   margin-right: 1rem;
   stroke-width: 1px !important;
-}
-
-button {
-  margin-top: 2rem;
-  border-radius: 2rem;
-  font-size: 2rem;
-  width: 100%;
-  padding: 1rem;
-  color: var(--white-color);
-  background-color: var(--blue-color);
-  border: solid 1px var(--black-color);
 }
 
 .selectedMenuButton a {

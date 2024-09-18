@@ -5,6 +5,7 @@ import ExploreView from '@/views/ExploreView.vue'
 import MessagesView from '@/views/MessagesView.vue'
 import SavedItemsView from '@/views/SavedItemsView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import LoginView from '@/views/LoginView.vue'
 import NotFound from '@/views/NotFound.vue'
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
   { path: '/messages', name: 'Messages', component: MessagesView },
   { path: '/saved-items', name: 'Saved items', component: SavedItemsView },
   { path: '/profile', name: 'Profile', component: ProfileView },
+  { path: '/login', name: 'Login', component: LoginView },
   { path: '/:pathMatch(.*)*', name: 'Not Found', component: NotFound }
 ]
 
