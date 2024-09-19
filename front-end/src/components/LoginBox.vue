@@ -1,9 +1,11 @@
 <script>
 import closeIcon from './icons/closeIcon.vue'
+import basicButton from './BasicButton.vue';
 
 export default {
   components: {
-    closeIcon
+    closeIcon,
+    basicButton,
   }
 }
 </script>
@@ -22,6 +24,10 @@ export default {
       <input type="text" placeholder="Your email here" />
       <input type="password" placeholder="Your password here" />
       <input type="password" placeholder="Confirm your password" />
+      <div class="buttonRow">
+        <basicButton :textButtonColor="'#000000'" :buttonText="'Tweet'" :buttonColor="'#ffffff'" />
+        <basicButton :textButtonColor="'#ffffff'" :buttonText="'Forgot your password?'" :buttonColor="'#000000'" />
+      </div>
     </div>
   </div>
 </template>
@@ -66,7 +72,6 @@ img {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  height: 60%;
 }
 
 h1 {
@@ -84,5 +89,17 @@ input {
   padding: 1rem;
   font-size: 1.5rem;
   width: 50%;
+}
+
+.buttonRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.buttonRow :nth-child(2){
+  border-color: var(--white-color);
 }
 </style>
