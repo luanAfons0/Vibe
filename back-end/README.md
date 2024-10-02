@@ -2,11 +2,11 @@
 
 1. Install all dependencies.
 `
-    cargo install
+    cargo build
 `
 
 2. Run project in development mode.
 
 `
-    cargo watch -x run
+    cargo watch -c -w src -x run
 `
